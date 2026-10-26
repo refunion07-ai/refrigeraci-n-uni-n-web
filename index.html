@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refrigeración Unión | Soluciones industriales</title>
+  <meta name="description" content="Servicios de refrigeración comercial e industrial, cámaras frigoríficas, mantenimiento y urgencias.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #233246;
+      line-height: 1.6;
+      background: #f5f8fc;
+    }
+
+    header {
+      background: #102c4a;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+  display: inline-flex;
+  align-items: center;
+  max-width: 240px;
+}
+
+.logo img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: 75px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #45c4e8;
+    }
+
+    .hero {
+      min-height: 490px;
+      padding: 90px 8%;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, #102c4a 15%, #102c4acc 60%, #102c4a66),
+        url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.15;
+      margin: 18px 0;
+    }
+
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 25px;
+    }
+
+    .etiqueta {
+      color: #45c4e8;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 13px 22px;
+      margin: 5px 8px 5px 0;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      background: #087fa8;
+      color: white;
+    }
+
+    .boton:hover {
+      background: #05617f;
+    }
+
+    .boton-secundario {
+      background: transparent;
+      border: 1px solid white;
+    }
+
+    section {
+      padding: 70px 8%;
+      scroll-margin-top: 20px;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .titulo h2 {
+      color: #102c4a;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .tarjeta {
+      background: white;
+      padding: 28px;
+      border-radius: 10px;
+      border-top: 4px solid #087fa8;
+      box-shadow: 0 5px 20px #102c4a12;
+    }
+
+    .tarjeta h3 {
+      color: #102c4a;
+      margin-bottom: 12px;
+    }
+
+    .sobre {
+      background: white;
+    }
+
+    .sobre-contenido {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .sectores {
+      background: #eaf2f8;
+    }
+
+    .contacto {
+      background: #102c4a;
+      color: white;
+      text-align: center;
+    }
+
+    .contacto h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .datos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin: 35px 0;
+      text-align: left;
+    }
+
+    .dato {
+      padding: 20px;
+      border: 1px solid #ffffff35;
+      border-radius: 8px;
+    }
+
+    .dato h3 {
+      color: #45c4e8;
+      margin-bottom: 8px;
+    }
+
+    .dato a {
+      color: white;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      background: #091d32;
+      color: white;
+      text-align: center;
+      padding: 22px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 65px 7%;
+      }
+
+      section {
+        padding: 50px 7%;
+      }
+    }
+    /* CARRUSEL DE FOTOGRAFÍAS */
+    .carrusel {
+      padding: 35px 0;
+      background: #eaf2f8;
+    }
+
+    .carrusel-contenedor {
+      position: relative;
+      width: 92%;
+      max-width: 1200px;
+      height: 460px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #102c4a;
+      box-shadow: 0 8px 25px #102c4a30;
+    }
+
+    .diapositiva {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease;
+    }
+
+    .diapositiva.activa {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+
+    .diapositiva img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .texto-diapositiva {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 35px 28px;
+      color: white;
+      background: linear-gradient(
+        transparent,
+        rgba(4, 20, 40, 0.92)
+      );
+    }
+
+    .texto-diapositiva h2 {
+      color: white;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .texto-diapositiva p {
+      color: #d9efff;
+      font-size: 17px;
+    }
+
+    @media (max-width: 600px) {
+      .carrusel-contenedor {
+        width: 94%;
+        height: 300px;
+      }
+
+      .texto-diapositiva {
+        padding: 24px 16px;
+      }
+
+      .texto-diapositiva h2 {
+        font-size: 23px;
+      }
+
+      .texto-diapositiva p {
+        font-size: 14px;
+      }
+    }
+    /* ENCABEZADO PROFESIONAL */
+    .encabezado {
+      background: #102c4a;
+      color: #ffffff;
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #45c4e8;
+      box-shadow: 0 4px 16px #102c4a25;
+    }
+
+    .marca {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo-imagen {
+      width: 76px;
+      height: 70px;
+      object-fit: contain;
+      background: white;
+      border-radius: 8px;
+      padding: 4px;
+    }
+
+    .marca-texto {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.4;
+    }
+
+    .marca-texto strong {
+      font-size: 19px;
+    }
+
+    .marca-texto strong span {
+      color: #45c4e8;
+    }
+
+    .marca-texto small {
+      color: #d9efff;
+      font-size: 11px;
+    }
+
+    .menu-principal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .menu-principal a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+
+    .menu-principal a:hover {
+      color: #45c4e8;
+    }
+
+    .boton-whatsapp {
+      display: inline-block;
+      padding: 12px 16px;
+      background: #087fa8;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .boton-whatsapp:hover {
+      background: #05617f;
+    }
+
+    @media (max-width: 850px) {
+      .encabezado {
+        justify-content: center;
+      }
+
+      .menu-principal {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .marca-texto strong {
+        font-size: 16px;
+      }
+
+      .logo-imagen {
+        width: 60px;
+        height: 60px;
+      }
+
+      .boton-whatsapp {
+        text-align: center;
+      }
+    }
+    /* PORTADA PROFESIONAL */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16, 44, 74, 0.94) 0%,
+      rgba(16, 44, 74, 0.78) 55%,
+      rgba(16, 44, 74, 0.45) 100%
+    ),
+    url("portada.jpg.jpeg") center center / cover no-repeat;
+  color: white;
+  padding: 100px 8%;
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+}
+.hero-content {
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero .etiqueta {
+  display: inline-block;
+  color: #bcefff;
+  border: 1px solid #45c4e8;
+  border-radius: 30px;
+  padding: 9px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  color: white;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.12;
+  margin: 0 0 22px;
+  max-width: 720px;
+  font-weight: 800;
+}
+
+.hero p {
+  color: #e4f3ff;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 650px;
+  margin-bottom: 30px;
+}
+
+.hero .boton {
+  display: inline-block;
+  background: #45c4e8;
+  color: #102c4a;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px 22px;
+  border-radius: 8px;
+  margin: 5px 10px 5px 0;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.hero .boton:hover {
+  background: #8be2fa;
+  transform: translateY(-3px);
+}
+
+.hero .boton-secundario {
+  background: transparent;
+  color: white;
+  border: 1px solid #bcefff;
+}
+
+.hero .boton-secundario:hover {
+  background: #ffffff18;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 65px 7%;
+    min-height: auto;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .boton {
+    text-align: center;
+  }
+}
+/* FORMULARIO DE CONTACTO */
+.seccion-solicitud {
+  background: #f0f7fc;
+  padding: 70px 7%;
+}
+
+.formulario-contenedor {
+  max-width: 680px;
+  margin: 0 auto;
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(16, 44, 74, 0.12);
+  border-top: 5px solid #45c4e8;
+}
+
+.etiqueta-formulario {
+  color: #087fa8;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.formulario-contenedor h2 {
+  color: #102c4a;
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.texto-formulario {
+  color: #526579;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+#formularioSolicitud {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#formularioSolicitud label {
+  color: #102c4a;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#formularioSolicitud input,
+#formularioSolicitud select,
+#formularioSolicitud textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #cbd8e4;
+  border-radius: 7px;
+  font: inherit;
+  background: #fff;
+  color: #24384a;
+}
+
+#formularioSolicitud input:focus,
+#formularioSolicitud select:focus,
+#formularioSolicitud textarea:focus {
+  outline: 2px solid #45c4e8;
+  border-color: #087fa8;
+}
+
+.boton-enviar-solicitud {
+  margin-top: 18px;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #087fa8;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.boton-enviar-solicitud:hover {
+  background: #102c4a;
+}
+
+.nota-formulario {
+  color: #687989;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .seccion-solicitud {
+    padding: 45px 5%;
+  }
+
+  .formulario-contenedor {
+    padding: 23px 18px;
+  }
+
+  .formulario-contenedor h2 {
+    font-size: 26px;
+  }
+}
+</style>
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+ <header class="encabezado">
+    <a class="marca" href="#inicio">
+      <img
+        src="logo.jpg.jpeg"
+        alt="Logotipo de Refrigeración Unión"
+        class="logo-imagen">
+
+      <span class="marca-texto">
+        <strong>REFRIGERACIÓN <span>UNIÓN</span></strong>
+        <small>Soluciones comerciales e industriales</small>
+      </span>
+    </a>
+
+    <nav class="menu-principal" aria-label="Menú principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#sectores">Sectores</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <a class="boton-whatsapp"
+       href="https://wa.me/525633503297"
+       target="_blank"
+       rel="noopener">
+      Contactar por WhatsApp
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="etiqueta">Refrigeración comercial e industrial</span>
+
+        <h1>Protegemos tu producto. Mantenemos tu operación.</h1>
+
+        <p>
+          Soluciones integrales en refrigeración, cámaras frigoríficas,
+          mantenimiento, reparación e instalación de equipos.
+        </p>
+
+        <a class="boton"
+           href="https://wa.me/525633503297"
+           target="_blank" rel="noopener">
+          Contactar por WhatsApp
+        </a>
+
+        <a class="boton boton-secundario" href="#servicios">
+          Conocer servicios
+        </a>
+      </div>
+    </section>
+    <div class="aviso-24">
+  <h2>LABORAMOS 24/7 EN CDMX Y OTROS ESTADOS.</h2>
+</div>
+
+    <!-- CARRUSEL DE FOTOGRAFÍAS -->
+    <section class="carrusel" aria-label="Nuestros trabajos">
+      <div class="carrusel-contenedor">
+
+        <div class="diapositiva activa">
+          <img src="imagenescamara.jpg.jpeg"
+               alt="Cámara frigorífica">
+          <div class="texto-diapositiva">
+            <h2>Cámaras frigoríficas</h2>
+            <p>Soluciones profesionales de conservación en frío.</p>
+          </div>
+        </div>
+
+        <div class="diapositiva">
+          <img src="imagenescompresor.jpg.jpeg"
+               alt="Compresor de refrigeración">
+          <div class="texto-diapositiva">
+            <h2>Equipos de refrigeración</h2>
+            <p>Eficiencia y tecnología para tu negocio.</p>
+          </div>
+        </div>
+
+        <div class="diapositiva">
+          <img src="imagenesinstalacion.jpg.jpeg"
+               alt="Instalación industrial">
+          <div class="texto-diapositiva">
+            <h2>Instalaciones industriales</h2>
+            <p>Soluciones para cada proyecto.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- FIN DEL CARRUSEL -->
+
+    <section id="servicios">
+      <div class="titulo">
+        <h2>Nuestros servicios</h2>
+        <p>Un aliado técnico para las necesidades de tu negocio.</p>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <h3>Mantenimiento preventivo</h3>
+          <p>
+            Revisiones programadas, limpieza, ajustes y seguimiento
+            para anticipar fallas en tus equipos.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Reparación y urgencias</h3>
+          <p>
+            Diagnóstico de fallas, reparación y sustitución
+            de componentes de refrigeración.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+
+            <h3>HVAC y Automatización</h3>
+          <p>
+          HVAC Farmacéutico • Confort • Automatización y diseño
+          de sistemas de enfriamiento
+ 
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Refrigeración y Equipos</h3>
+          <p>
+Cámaras frigoríficas • Refrigeración
+ y congelación 
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sobre" id="empresa">
+      <div class="sobre-contenido">
+        <div class="titulo">
+          <h2>¿Por qué Refrigeración Unión?</h2>
+        </div>
+
+        <p>
+          Somos una empresa mexicana enfocada en refrigeración
+          comercial e industrial. Ofrecemos acompañamiento desde
+          el diseño de los sistemas hasta su mantenimiento,
+          con atención a las necesidades de cada operación.
+        </p>
+      </div>
+    </section>
+
+    <section class="sectores" id="sectores">
+      <div class="titulo">
+        <h2>Sectores que atendemos</h2>
+        <p>Soluciones para negocios que necesitan conservar sus productos.</p>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <h3>Rastros y mataderos</h3>
+          <p>Conservación y congelación de carne.</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Carnicerías y pollerías</h3>
+          <p>Cámaras frías, vitrinas y congeladores.</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Frigoríficos y distribución</h3>
+          <p>Refrigeración para almacenamiento de productos.</p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Restaurantes y comercios</h3>
+          <p>Conservación de alimentos y productos perecederos.</p>
+        </article>
+      </div>
+    </section>
+    <section class="galeria-trabajos" id="galeria">
+  <h2>Nuestros trabajos y equipos</h2>
+
+  <p class="descripcion-galeria">
+    Soluciones de refrigeración comercial e industrial,
+    instalación y mantenimiento en CDMX.
+  </p>
+
+  <div class="galeria-contenedor">
+
+    <article class="tarjeta-galeria">
+      <img
+        src="camara-fria.jpg.jpeg"
+        alt="Cámara de refrigeración"
+        loading="lazy"
+      >
+      <h3>Cámaras de refrigeración</h3>
+      <p>Equipos para conservar productos a la temperatura adecuada.</p>
+    </article>
+
+    <article class="tarjeta-galeria">
+      <img
+        src="equipoderefrigeracion.jpg.jpeg"
+        alt="equipo de refrigeración"
+        loading="lazy"
+      >
+      <h3>Equipos de refrigeración</h3>
+      <p>unidad de refrigeración industrial para fabricación o procesamiento de hielo.</p>
+    </article>
+
+    <article class="tarjeta-galeria">
+      <img
+        src="tecnico.jpg.jpeg"
+        alt="Técnico dando mantenimiento"
+        loading="lazy"
+      >
+      <h3>Servicio técnico</h3>
+      <p>Atención y mantenimiento de sistemas de refrigeración.</p>
+    </article>
+
+  </div>
+</section>
+<section id="solicitud" class="seccion-solicitud">
+  <div class="formulario-contenedor">
+    <span class="etiqueta-formulario">ATENCIÓN A CLIENTES</span>
+
+    <h2>¿En qué podemos ayudarte?</h2>
+    <p class="texto-formulario">
+      Cuéntanos qué necesitas y nuestro equipo podrá conocer tu solicitud
+      antes de atenderte por WhatsApp.
+    </p>
+
+    <form id="formularioSolicitud">
+      <label for="nombreCliente">Nombre o empresa *</label>
+      <input
+        type="text"
+        id="nombreCliente"
+        placeholder="Escribe tu nombre"
+        required
+      >
+
+      <label for="servicioCliente">¿Qué servicio necesitas? *</label>
+      <select id="servicioCliente" required>
+        <option value="">Selecciona un servicio</option>
+        <option>Instalación de equipos</option>
+        <option>Mantenimiento preventivo</option>
+        <option>Reparación de equipos</option>
+        <option>Cámaras frigoríficas</option>
+        <option>Refrigeración comercial</option>
+        <option>Refrigeración industrial</option>
+        <option>Otro servicio</option>
+      </select>
+
+      <label for="ubicacionCliente">Ubicación del servicio *</label>
+      <input
+        type="text"
+        id="ubicacionCliente"
+        placeholder="Alcaldía, municipio o ciudad"
+        required
+      >
+
+      <label for="mensajeCliente">Describe lo que necesitas *</label>
+      <textarea
+        id="mensajeCliente"
+        rows="4"
+        placeholder="Ej. La cámara frigorífica no enfría..."
+        required
+      ></textarea>
+
+      <button type="submit" class="boton-enviar-solicitud">
+        Enviar solicitud por WhatsApp
+      </button>
+
+      <p class="nota-formulario">
+        Tus datos se incluirán en el mensaje que prepares para WhatsApp.
+      </p>
+    </form>
+  </div>
+</section>
+    <section class="contacto" id="contacto">
+      <h2>Contáctanos</h2>
+      <p>Cuéntanos qué necesita tu operación.</p>
+
+      <div class="datos">
+        <div class="dato">
+          <h3>Primer contacto</h3>
+          <p>WhatsApp:</p>
+          <p><a href="https://wa.me/525633503297"
+                target="_blank" rel="noopener">56 3350 3297</a></p>´
+                <a class="enlace-facebook"
+   href="https://www.facebook.com/share/1F2p72mrXd/"
+   target="_blank"
+   rel="noopener noreferrer">
+Visítanos en Facebook
+</a>
+          <p style="margin-top: 10px;">Correo electrónico:</p>
+          <p><a href="mailto:contacto@refrigeracionunion.com.mx">
+            contacto@refrigeracionunion.com.mx
+          </a></p>
+        </div>
+
+        <div class="dato">
+          <h3>Llamadas y urgencias</h3>
+          <p>Ing. Ferrer</p>
+          <p><a href="tel:+525511988853">55 1198 8853</a></p>
+          <p style="margin-top: 10px;">
+            Atención de urgencias 24/7, sujeta a ubicación
+            y disponibilidad.
+          </p>
+        </div>
+      </div>
+
+      <a class="boton"
+         href="https://wa.me/525633503297"
+         target="_blank" rel="noopener">
+        Solicitar información
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Refrigeración Unión. Todos los derechos reservados.</p>
+    <p>Refrigeración comercial e industrial.</p>
+  </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const diapositivas = document.querySelectorAll(
+        ".carrusel .diapositiva"
+      );
+
+      if (diapositivas.length < 2) return;
+
+      let actual = 0;
+
+      setInterval(function () {
+        diapositivas[actual].classList.remove("activa");
+
+        actual = (actual + 1) % diapositivas.length;
+
+        diapositivas[actual].classList.add("activa");
+      }, 3000);
+    });
+  </script>
+  <script>
+document.getElementById("formularioSolicitud").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const nombre = document.getElementById("nombreCliente").value.trim();
+  const servicio = document.getElementById("servicioCliente").value;
+  const ubicacion = document.getElementById("ubicacionCliente").value.trim();
+  const descripcion = document.getElementById("mensajeCliente").value.trim();
+
+  const mensaje =
+    "Hola, Refrigeración Unión. Quiero solicitar información sobre un servicio.\n\n" +
+    "Nombre o empresa: " + nombre + "\n" +
+    "Servicio solicitado: " + servicio + "\n" +
+    "Ubicación: " + ubicacion + "\n" +
+    "Descripción: " + descripcion;
+
+  const url = "https://wa.me/525633503297?text=" + encodeURIComponent(mensaje);
+
+  window.open(url, "_blank");
+});
+</script>
+</body>
+</html>
+
+

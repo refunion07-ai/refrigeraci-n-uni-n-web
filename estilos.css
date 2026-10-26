@@ -1,0 +1,284 @@
+/* ENCABEZADO DE REFRIGERACIÓN UNIÓN */
+header {
+  background: #071d3b;
+  color: #ffffff;
+  padding: 18px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* LOGOTIPO */
+.logo {
+  display: flex;
+  align-items: center;
+  max-width: 250px;
+}
+
+.logo img {
+  width: 220px;
+  max-width: 100%;
+  height: 75px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #42c5ef;
+}
+
+/* AJUSTES PARA CELULARES */
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .logo img {
+    object-position: center;
+  }
+}
+/* CARRUSEL DE REFRIGERACIÓN UNIÓN */
+.carrusel {
+    width: 100%;
+    padding: 30px 0;
+    background: #f2f7fb;
+}
+
+.carrusel-contenedor {
+    position: relative;
+    width: 92%;
+    max-width: 1200px;
+    height: 460px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #0b2038;
+    box-shadow: 0 8px 25px rgba(0, 25, 50, 0.2);
+}
+
+.diapositiva {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease;
+}
+
+.diapositiva.activa {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.diapositiva img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.texto-diapositiva {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 35px 28px;
+    color: white;
+    background: linear-gradient(
+        transparent,
+        rgba(4, 20, 40, 0.92)
+    );
+}
+
+.texto-diapositiva h2 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.texto-diapositiva p {
+    margin: 0;
+    font-size: 17px;
+    color: #d9efff;
+}
+
+@media (max-width: 600px) {
+    ."carrusel-contenedor {
+        width: 94%;
+        height: 300px;
+    }
+
+    .texto-diapositiva {
+        padding: 24px 16px;
+    }
+
+    .texto-diapositiva h2 {
+        font-size: 23px;
+    }
+
+    .texto-diapositiva p {
+        font-size: 14px;
+    }
+}
+/* AVISO DE ATENCION 24/7 */
+.aviso-24 {
+  background: #102c4a;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  border-bottom: 4px solid #45c4e8;
+}
+
+.aviso-24 h2 {
+  text-align: center;
+  font-size: clamp(28px, 5vw, 46px);
+  margin: 10px 0;
+  font-weight: 800;
+}
+
+.aviso-24 h2 {
+  font-size: clamp(28px, 5vw, 46px);
+  margin: 10px 0;
+  font-weight: 800;
+}
+
+.aviso-24 p {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ENLACE A FACEBOOK */
+.enlace-facebook {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 12px 20px;
+  background: #1877f2;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.enlace-facebook:hover {
+  background: #087fa8;
+}
+
+/* AJUSTES PARA CELULARES */
+@media (max-width: 600px) {
+  .aviso-24 {
+    padding: 22px 12px;
+  }
+
+  .aviso-24 p {
+    font-size: 14px;
+  }
+}
+/* GALERÍA DE REFRIGERACIÓN UNIÓN */
+.galeria-trabajos {
+  background: #f3f9fc;
+  padding: 45px 20px;
+  text-align: center;
+}
+
+.galeria-trabajos h2 {
+  color: #102c4a;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.galeria-trabajos .descripcion-galeria {
+  color: #425466;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.galeria-contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.tarjeta-galeria {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(16, 44, 74, 0.12);
+  border-bottom: 4px solid #45c4e8;
+}
+
+.tarjeta-galeria img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.tarjeta-galeria h3 {
+  color: #102c4a;
+  font-size: 18px;
+  margin: 16px 10px 8px;
+}
+
+.tarjeta-galeria p {
+  color: #425466;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0 14px 16px;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .galeria-contenedor {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .tarjeta-galeria img {
+    height: 170px;
+  }
+
+  .galeria-trabajos h2 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 420px) {
+  .galeria-contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta-galeria img {
+    height: 220px;
+  }
+}
